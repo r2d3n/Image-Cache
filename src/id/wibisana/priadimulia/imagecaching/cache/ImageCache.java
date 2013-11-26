@@ -57,9 +57,15 @@ public class ImageCache {
 	
 	public static ImageCache get(Context context) {
 		if(sImageCache == null) {
-			sImageCache = new ImageCache(context);
+			initialize(context);
 		}
 		return sImageCache;
+	}
+	
+	public static void initialize(Context context) {
+		if(sImageCache == null) {
+			sImageCache = new ImageCache(context);
+		}
 	}
 	
 	public ImageCache(ImageCacheParams cacheParams) {
